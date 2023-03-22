@@ -1,0 +1,47 @@
+.scrollDiv{
+   max-width: auto;
+   height: 200px;
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+#registrar {
+    background: rgba(111, 226, 58, 0.822);
+    height: 40px;
+    width: 150px;
+    color: #fff;
+    border: none;
+    align-items: left;
+}
+
+#borrar {
+    background: rgba(255, 1, 1, 0.822);
+    height: 40px;
+    width: 150px;
+    color: #fff;
+    border: none;
+    align-items: right;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+    border: none;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+@media (max-width:480px) {
+    form {
+        width: 100%;
+    }
+}
+
