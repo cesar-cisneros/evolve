@@ -54,12 +54,6 @@ class cms{
 		$result = mysqli_query($this->conexion,$sql);
 		return mysqli_fetch_assoc($result);	
 	}
-
-	public function numero_colores($idcolor){
-		$getnum = mysqli_fetch_array (mysqli_query($this->conexion, "SELECT COUNT(*) FROM usuarios where idcolor = $idcolor"));
-		$num = $getnum["COUNT(*)"];
-		return $num;
-	}
 }
 
 $consultas = new cms;

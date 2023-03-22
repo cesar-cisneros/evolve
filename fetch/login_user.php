@@ -19,10 +19,6 @@
 				echo '<script>alert("Contrase&ntilde;a incorrecta")</script>';
 				header("Location: ../usuarios/index.html?err=pass");
 			}
-		}else{
-			echo '<script>alert("El usuario no existe")</script>';
-			header("Location: ../usuarios/index.html?err=usr");	
-
 		}
 	}
 ?>

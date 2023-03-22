@@ -3,16 +3,15 @@
     include("definiciones/definiciones.php"); 
     include("../conexion/conexion.php");
     $usuarios = $consultas->datos_usuarios();
-    $link = mysqli_connect("localhost","root","");
-    mysqli_select_db($link,"evolve");
+    $colores = $consultas->desplegar_colores();
     $datos = array();
     $count=0;
-        $res=mysqli_query($link,"SELECT * from colores");
-        while($row = mysqli_fetch_array($res)){
-        $datos[$count]["label"]=$row["color"];
-        $datos[$count]["y"]=$row["n_color"];
+foreach($colores as $c):
+        $datos[$count]["label"]=$c["color"];
+        $datos[$count]["y"]=$c["n_color"];
         $count=$count+1;
-        }
+endforeach;
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -74,13 +74,14 @@
                                 <div class="form-row">
                                     <div class="form-group col mb-2">
                                         <label class="text-color-light-2" for="frmSignInEmail">Email</label>
-                                        <input type="text" value="" maxlength="100" class="form-control bg-light rounded border-0 text-1" name="user" id="frmSignInEmail" placeholder="Ingrese su correo electr&oacute;nico" required>
+                                        <input type="email" class="form-control bg-light rounded border-0 text-1" name="user" id="user" placeholder="Ingrese su correo electr&oacute;nico" onchange="verificar_correo(this.value)" required="true">
+                                        <div id="mensaje_existencia_correo" class="text-center"></div>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">
                                         <label class="text-color-light-2" for="frmSignInPassword">Contrase&ntilde;a</label>
-                                        <input type="password" value="" class="form-control bg-light rounded border-0 text-1" name="pass" id="pass" id="frmSignInPassword" placeholder="Ingrese su Contrase&ntilde;a" required>
+                                        <input type="password" value="" class="form-control bg-light rounded border-0 text-1" name="pass" id="pass" placeholder="Ingrese su Contrase&ntilde;a" required="true">
                                     </div>
                                 </div>
                                 <div class="form-row mb-2">
@@ -93,7 +94,7 @@
                                 </div>
                                 <div class="row align-items-center">
                                     <div class="col text-right">
-                                        <button type="submit" class="btn btn-dark btn-rounded btn-v-3 btn-h-3 font-weight-bold">Ingresar</button>
+                                        <button id="boton_registrar" type="submit" class="btn btn-dark btn-rounded btn-v-3 btn-h-3 font-weight-bold">Ingresar</button>
                                     </div>
                                 </div>
                             </form>
@@ -117,19 +118,7 @@
             </div>
         </div>
     </div>
-
-    <div class="modal" id="error_usr" tabindex="-1" role="dialog" aria-labelledby="error_pass" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <h3><span class="badge badge-default">El usuario no existe</span></h3>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="../dist/js/verificar_ajax.js"></script>
     <script src="../dist/vendor/jquery/jquery.min.js"></script>
     <script src="../dist/vendor/jquery.appear/jquery.appear.min.js"></script>
     <script src="../dist/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -150,12 +139,6 @@
         var resultado = url.searchParams.get("err");
         if (resultado == 'pass') {
             $('#error_pass').modal('show');
-        } else if (resultado == 'usr') {
-            $('#error_usr').modal('show');
-        } else if (resultado == 'email') {
-            $('#error_mail').modal('show');
-        } else if (resultado == 'success') {
-            $('#error_success').modal('show');
         } else {}
     </script>
 </body>
